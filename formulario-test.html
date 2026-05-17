@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario TELGOFACTORY</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#061b3a;
+color:white;
+}
+
+.page{
+min-height:100vh;
+padding:18px 14px 28px;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+}
+
+.card{
+width:100%;
+max-width:420px;
+background:white;
+color:#061b3a;
+border-radius:22px;
+padding:20px 16px 18px;
+box-shadow:0 12px 28px rgba(0,0,0,.35);
+}
+
+.brand{
+text-align:center;
+font-size:15px;
+letter-spacing:1.5px;
+font-weight:700;
+color:#0c2c5e;
+margin-bottom:14px;
+}
+
+.title{
+text-align:center;
+font-size:26px;
+font-weight:800;
+line-height:1.1;
+margin-bottom:14px;
+}
+
+.measure-box{
+background:#0c2c5e;
+color:white;
+border-radius:18px;
+padding:14px 10px;
+text-align:center;
+margin-bottom:10px;
+}
+
+.measure-label{
+font-size:13px;
+letter-spacing:1px;
+font-weight:700;
+opacity:.9;
+margin-bottom:4px;
+}
+
+.measure-value{
+font-size:25px;
+font-weight:800;
+}
+
+.note{
+text-align:center;
+font-size:12px;
+color:#5e6a7a;
+margin-bottom:18px;
+}
+
+.section-title{
+font-size:17px;
+font-weight:800;
+margin:8px 0 12px;
+}
+
+.option{
+border:2px solid #dbe3ee;
+border-radius:18px;
+padding:14px;
+margin-bottom:14px;
+background:#f7f9fc;
+}
+
+.option-head{
+display:flex;
+align-items:center;
+gap:9px;
+font-size:17px;
+font-weight:800;
+margin-bottom:12px;
+}
+
+input[type="radio"]{
+width:22px;
+height:22px;
+accent-color:#1a9b52;
+}
+
+label{
+display:block;
+font-size:13px;
+font-weight:700;
+margin-bottom:6px;
+color:#1b355c;
+}
+
+input, textarea{
+width:100%;
+border:2px solid #c9d4e3;
+border-radius:14px;
+padding:13px 12px;
+font-size:17px;
+outline:none;
+background:white;
+color:#061b3a;
+}
+
+textarea{
+min-height:84px;
+resize:vertical;
+}
+
+.two-cols{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.send{
+width:100%;
+border:none;
+border-radius:18px;
+padding:17px 12px;
+background:#168f49;
+color:white;
+font-size:20px;
+font-weight:900;
+letter-spacing:.5px;
+margin-top:8px;
+box-shadow:0 7px 0 #0d5e30;
+}
+
+.helper{
+text-align:center;
+color:#5e6a7a;
+font-size:12px;
+margin-top:12px;
+line-height:1.35;
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+<section class="card">
+
+<div class="brand">TELGOFACTORY</div>
+
+<div class="title">MOLDURA TF-01</div>
+
+<div class="measure-box">
+<div class="measure-label">MEDIDA</div>
+<div class="measure-value">15x15x100 cm</div>
+</div>
+
+<div class="note">El modelo y la medida llegan cargados automáticamente.</div>
+
+<div class="section-title">Seleccioná una opción:</div>
+
+<div class="option">
+<div class="option-head">
+<input type="radio" name="tipo" checked>
+<span>Sé cuántos metros necesito</span>
+</div>
+<label>Cantidad de metros</label>
+<input type="text" placeholder="Ej: 18">
+</div>
+
+<div class="option">
+<div class="option-head">
+<input type="radio" name="tipo">
+<span>No sé calcular</span>
+</div>
+
+<label>Medidas a cubrir</label>
+
+<div class="two-cols">
+<div>
+<label>ALTO</label>
+<input type="text" placeholder="Ej: 3">
+</div>
+
+<div>
+<label>ANCHO</label>
+<input type="text" placeholder="Ej: 4">
+</div>
+</div>
+</div>
+
+<div class="option">
+<div class="option-head">
+<input type="radio" name="tipo">
+<span>Quiero otro tipo de información</span>
+</div>
+<textarea placeholder="Escribí qué necesitás consultar"></textarea>
+</div>
+
+<label>Comentarios adicionales</label>
+<textarea placeholder="Ej: necesito colocarlo en exterior, frente, techo, local, etc."></textarea>
+
+<button class="send">ENVIAR CONSULTA</button>
+
+<div class="helper">Esta es una prueba visual. Todavía no modifica el catálogo.</div>
+
+</section>
+</main>
+
+</body>
+</html>
