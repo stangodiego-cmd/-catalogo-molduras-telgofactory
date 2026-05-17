@@ -7,138 +7,23 @@
 
 <style>
 *{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#061b3a;
-color:white;
-}
-
-.page{
-min-height:100vh;
-padding:18px 14px 28px;
-display:flex;
-justify-content:center;
-align-items:flex-start;
-}
-
-.card{
-width:100%;
-max-width:420px;
-background:white;
-color:#061b3a;
-border-radius:22px;
-padding:20px 16px 18px;
-box-shadow:0 12px 28px rgba(0,0,0,.35);
-}
-
-.brand{
-text-align:center;
-font-size:15px;
-letter-spacing:1.5px;
-font-weight:700;
-color:#0c2c5e;
-margin-bottom:14px;
-}
-
-.title{
-text-align:center;
-font-size:26px;
-font-weight:800;
-margin-bottom:14px;
-}
-
-.measure-box{
-background:#0c2c5e;
-color:white;
-border-radius:18px;
-padding:14px 10px;
-text-align:center;
-margin-bottom:10px;
-}
-
-.measure-label{
-font-size:13px;
-font-weight:700;
-margin-bottom:4px;
-}
-
-.measure-value{
-font-size:25px;
-font-weight:800;
-}
-
-.note{
-text-align:center;
-font-size:12px;
-color:#5e6a7a;
-margin-bottom:18px;
-}
-
-.section-title{
-font-size:17px;
-font-weight:800;
-margin:8px 0 12px;
-}
-
-.option{
-border:2px solid #dbe3ee;
-border-radius:18px;
-padding:14px;
-margin-bottom:14px;
-background:#f7f9fc;
-}
-
-.option-head{
-display:flex;
-align-items:center;
-gap:9px;
-font-size:17px;
-font-weight:800;
-margin-bottom:12px;
-}
-
-label{
-display:block;
-font-size:13px;
-font-weight:700;
-margin-bottom:6px;
-}
-
-input,textarea{
-width:100%;
-border:2px solid #c9d4e3;
-border-radius:14px;
-padding:13px 12px;
-font-size:17px;
-}
-
-.two-cols{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
-
-.send{
-width:100%;
-border:none;
-border-radius:18px;
-padding:17px;
-background:#168f49;
-color:white;
-font-size:20px;
-font-weight:900;
-margin-top:8px;
-cursor:pointer;
-}
-
-.sub{
-margin-top:10px;
-font-size:14px;
-font-weight:700;
-color:#0c2c5e;
-}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#061b3a;color:white}
+.page{min-height:100vh;padding:18px 14px 28px;display:flex;justify-content:center;align-items:flex-start}
+.card{width:100%;max-width:420px;background:white;color:#061b3a;border-radius:22px;padding:20px 16px 18px;box-shadow:0 12px 28px rgba(0,0,0,.35)}
+.brand{text-align:center;font-size:15px;letter-spacing:1.5px;font-weight:700;color:#0c2c5e;margin-bottom:14px}
+.title{text-align:center;font-size:26px;font-weight:800;margin-bottom:14px}
+.measure-box{background:#0c2c5e;color:white;border-radius:18px;padding:14px 10px;text-align:center;margin-bottom:10px}
+.measure-label{font-size:13px;font-weight:700;margin-bottom:4px}
+.measure-value{font-size:25px;font-weight:800}
+.note{text-align:center;font-size:12px;color:#5e6a7a;margin-bottom:18px}
+.section-title{font-size:17px;font-weight:800;margin:8px 0 12px}
+.option{border:2px solid #dbe3ee;border-radius:18px;padding:14px;margin-bottom:14px;background:#f7f9fc}
+.option-head{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:800;margin-bottom:12px}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+input,textarea{width:100%;border:2px solid #c9d4e3;border-radius:14px;padding:13px 12px;font-size:17px}
+.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.send{width:100%;border:none;border-radius:18px;padding:17px;background:#168f49;color:white;font-size:20px;font-weight:900;margin-top:8px;cursor:pointer}
+.sub{margin-top:10px;font-size:14px;font-weight:700;color:#0c2c5e}
 </style>
 </head>
 
@@ -149,158 +34,147 @@ color:#0c2c5e;
 
 <div class="brand">TELGOFACTORY</div>
 
-<div class="title">MOLDURA TF-01</div>
+<div class="title" id="modeloTitulo">MOLDURA</div>
 
 <div class="measure-box">
 <div class="measure-label">MEDIDA</div>
-<div class="measure-value">15x15x100 cm</div>
+<div class="measure-value" id="medidaTitulo"></div>
 </div>
 
-<div class="note">
-El modelo y la medida llegan cargados automáticamente.
-</div>
+<div class="note">El modelo y la medida llegan cargados automáticamente.</div>
 
-<div class="section-title">
-Seleccioná una opción:
-</div>
+<div class="section-title">Seleccioná una opción:</div>
 
 <div class="option">
-
 <div class="option-head">
 <input type="radio" name="tipo" checked id="metrosRadio">
 <span>Sé cuántos metros necesito</span>
 </div>
-
 <label>Cantidad de metros</label>
 <input id="metros" type="text" placeholder="Ej: 18">
-
 </div>
 
 <div class="option">
-
 <div class="option-head">
 <input type="radio" name="tipo" id="nocRadio">
 <span>No sé calcular</span>
 </div>
 
-<div class="sub">
-¿Qué necesitás cubrir?
-</div>
+<div class="sub">¿Qué necesitás cubrir?</div>
 
 <br>
 
-<input type="radio" name="cubrir" checked> Techo
+<input type="radio" name="cubrir" id="techoRadio" checked> Techo
 
 <div class="two-cols">
 <div>
 <label>LARGO</label>
-<input id="largo" type="text">
+<input id="largoTecho" type="text">
 </div>
-
 <div>
 <label>ANCHO</label>
-<input id="ancho" type="text">
+<input id="anchoTecho" type="text">
 </div>
 </div>
 
 <br>
 
-<input type="radio" name="cubrir"> Ventana
+<input type="radio" name="cubrir" id="ventanaRadio"> Ventana
 
 <div class="two-cols">
 <div>
 <label>ALTO</label>
-<input id="altoV" type="text">
+<input id="altoVentana" type="text">
 </div>
-
 <div>
 <label>ANCHO</label>
-<input id="anchoV" type="text">
+<input id="anchoVentana" type="text">
 </div>
 </div>
 
 <br>
 
-<input type="radio" name="cubrir"> Puerta
+<input type="radio" name="cubrir" id="puertaRadio"> Puerta
 
 <div class="two-cols">
 <div>
 <label>ALTO</label>
-<input id="altoP" type="text">
+<input id="altoPuerta" type="text">
 </div>
-
 <div>
 <label>ANCHO</label>
-<input id="anchoP" type="text">
+<input id="anchoPuerta" type="text">
 </div>
 </div>
 
 </div>
 
 <div class="option">
-
 <div class="option-head">
 <input type="radio" name="tipo" id="infoRadio">
 <span>Quiero otro tipo de información</span>
 </div>
-
 <textarea id="info" placeholder="Escribí qué necesitás consultar"></textarea>
-
 </div>
 
 <label>Comentarios adicionales</label>
+<textarea id="comentario" placeholder="Ej: necesito colocarlo en exterior"></textarea>
 
-<textarea id="comentario"
-placeholder="Ej: necesito colocarlo en exterior">
-</textarea>
-
-<button class="send"
-onclick="enviar()">
-
-ENVIAR CONSULTA
-
-</button>
+<button class="send" onclick="enviar()">ENVIAR CONSULTA</button>
 
 </section>
 </main>
 
 <script>
+const params=new URLSearchParams(window.location.search);
+const modelo=params.get("modelo") || "TF-01";
+const medida=params.get("medida") || "15x15x100 cm";
+
+document.getElementById("modeloTitulo").innerText="MOLDURA "+modelo;
+document.getElementById("medidaTitulo").innerText=medida;
 
 function enviar(){
 
-let mensaje="MOLDURA: TF-01%0A";
-mensaje+="MEDIDA:15x15x100 cm%0A%0A";
+let mensaje="";
+mensaje+="MOLDURA: "+modelo+"%0A";
+mensaje+="MEDIDA: "+medida+"%0A%0A";
 
 if(document.getElementById("metrosRadio").checked){
-
-mensaje+="TIPO:Sé cuántos metros necesito%0A";
-mensaje+="METROS:"+document.getElementById("metros").value+"%0A";
-
+mensaje+="TIPO: Sé cuántos metros necesito%0A";
+mensaje+="METROS: "+document.getElementById("metros").value+"%0A";
 }
 
 if(document.getElementById("nocRadio").checked){
+mensaje+="TIPO: No sé calcular%0A";
 
-mensaje+="TIPO:No sé calcular%0A";
+if(document.getElementById("techoRadio").checked){
+mensaje+="SUPERFICIE: Techo%0A";
+mensaje+="LARGO: "+document.getElementById("largoTecho").value+"%0A";
+mensaje+="ANCHO: "+document.getElementById("anchoTecho").value+"%0A";
+}
 
-mensaje+="LARGO:"+document.getElementById("largo").value+"%0A";
+if(document.getElementById("ventanaRadio").checked){
+mensaje+="SUPERFICIE: Ventana%0A";
+mensaje+="ALTO: "+document.getElementById("altoVentana").value+"%0A";
+mensaje+="ANCHO: "+document.getElementById("anchoVentana").value+"%0A";
+}
 
-mensaje+="ANCHO:"+document.getElementById("ancho").value+"%0A";
-
+if(document.getElementById("puertaRadio").checked){
+mensaje+="SUPERFICIE: Puerta%0A";
+mensaje+="ALTO: "+document.getElementById("altoPuerta").value+"%0A";
+mensaje+="ANCHO: "+document.getElementById("anchoPuerta").value+"%0A";
+}
 }
 
 if(document.getElementById("infoRadio").checked){
-
-mensaje+="CONSULTA:"+document.getElementById("info").value+"%0A";
-
+mensaje+="TIPO: Quiero otro tipo de información%0A";
+mensaje+="CONSULTA: "+document.getElementById("info").value+"%0A";
 }
 
-mensaje+="COMENTARIO:"+document.getElementById("comentario").value;
+mensaje+="%0ACOMENTARIO: "+document.getElementById("comentario").value;
 
-window.location.href=
-"https://wa.me/5491132181527?text="+mensaje;
-
+window.location.href="https://wa.me/5491132181527?text="+mensaje;
 }
-
 </script>
 
 </body>
