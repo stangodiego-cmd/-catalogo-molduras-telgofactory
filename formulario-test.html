@@ -46,7 +46,6 @@ margin-bottom:14px;
 text-align:center;
 font-size:26px;
 font-weight:800;
-line-height:1.1;
 margin-bottom:14px;
 }
 
@@ -61,9 +60,7 @@ margin-bottom:10px;
 
 .measure-label{
 font-size:13px;
-letter-spacing:1px;
 font-weight:700;
-opacity:.9;
 margin-bottom:4px;
 }
 
@@ -102,34 +99,19 @@ font-weight:800;
 margin-bottom:12px;
 }
 
-input[type="radio"]{
-width:22px;
-height:22px;
-accent-color:#1a9b52;
-}
-
 label{
 display:block;
 font-size:13px;
 font-weight:700;
 margin-bottom:6px;
-color:#1b355c;
 }
 
-input, textarea{
+input,textarea{
 width:100%;
 border:2px solid #c9d4e3;
 border-radius:14px;
 padding:13px 12px;
 font-size:17px;
-outline:none;
-background:white;
-color:#061b3a;
-}
-
-textarea{
-min-height:84px;
-resize:vertical;
 }
 
 .two-cols{
@@ -142,22 +124,19 @@ gap:10px;
 width:100%;
 border:none;
 border-radius:18px;
-padding:17px 12px;
+padding:17px;
 background:#168f49;
 color:white;
 font-size:20px;
 font-weight:900;
-letter-spacing:.5px;
 margin-top:8px;
-box-shadow:0 7px 0 #0d5e30;
 }
 
-.helper{
-text-align:center;
-color:#5e6a7a;
-font-size:12px;
-margin-top:12px;
-line-height:1.35;
+.sub{
+margin-top:10px;
+font-size:14px;
+font-weight:700;
+color:#0c2c5e;
 }
 </style>
 </head>
@@ -176,54 +155,112 @@ line-height:1.35;
 <div class="measure-value">15x15x100 cm</div>
 </div>
 
-<div class="note">El modelo y la medida llegan cargados automáticamente.</div>
+<div class="note">
+El modelo y la medida llegan cargados automáticamente.
+</div>
 
-<div class="section-title">Seleccioná una opción:</div>
+<div class="section-title">
+Seleccioná una opción:
+</div>
 
 <div class="option">
+
 <div class="option-head">
-<input type="radio" name="tipo" checked>
+<input type="radio" checked>
 <span>Sé cuántos metros necesito</span>
 </div>
+
 <label>Cantidad de metros</label>
+
 <input type="text" placeholder="Ej: 18">
+
 </div>
 
 <div class="option">
+
 <div class="option-head">
-<input type="radio" name="tipo">
+<input type="radio">
 <span>No sé calcular</span>
 </div>
 
-<label>Medidas a cubrir</label>
+<div class="sub">
+¿Qué necesitás cubrir?
+</div>
+
+<br>
+
+<input type="radio"> Techo
 
 <div class="two-cols">
+
 <div>
-<label>ALTO</label>
-<input type="text" placeholder="Ej: 3">
+<label>LARGO</label>
+<input type="text">
 </div>
 
 <div>
 <label>ANCHO</label>
-<input type="text" placeholder="Ej: 4">
+<input type="text">
 </div>
+
 </div>
+
+<br>
+
+<input type="radio"> Ventana
+
+<div class="two-cols">
+
+<div>
+<label>ALTO</label>
+<input type="text">
+</div>
+
+<div>
+<label>ANCHO</label>
+<input type="text">
+</div>
+
+</div>
+
+<br>
+
+<input type="radio"> Puerta
+
+<div class="two-cols">
+
+<div>
+<label>ALTO</label>
+<input type="text">
+</div>
+
+<div>
+<label>ANCHO</label>
+<input type="text">
+</div>
+
+</div>
+
 </div>
 
 <div class="option">
+
 <div class="option-head">
-<input type="radio" name="tipo">
+<input type="radio">
 <span>Quiero otro tipo de información</span>
 </div>
+
 <textarea placeholder="Escribí qué necesitás consultar"></textarea>
+
 </div>
 
 <label>Comentarios adicionales</label>
-<textarea placeholder="Ej: necesito colocarlo en exterior, frente, techo, local, etc."></textarea>
 
-<button class="send">ENVIAR CONSULTA</button>
+<textarea placeholder="Ej: necesito colocarlo en exterior"></textarea>
 
-<div class="helper">Esta es una prueba visual. Todavía no modifica el catálogo.</div>
+<button class="send">
+ENVIAR CONSULTA
+</button>
 
 </section>
 </main>
