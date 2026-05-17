@@ -130,6 +130,7 @@ color:white;
 font-size:20px;
 font-weight:900;
 margin-top:8px;
+cursor:pointer;
 }
 
 .sub{
@@ -166,20 +167,19 @@ Seleccioná una opción:
 <div class="option">
 
 <div class="option-head">
-<input type="radio" checked>
+<input type="radio" name="tipo" checked id="metrosRadio">
 <span>Sé cuántos metros necesito</span>
 </div>
 
 <label>Cantidad de metros</label>
-
-<input type="text" placeholder="Ej: 18">
+<input id="metros" type="text" placeholder="Ej: 18">
 
 </div>
 
 <div class="option">
 
 <div class="option-head">
-<input type="radio">
+<input type="radio" name="tipo" id="nocRadio">
 <span>No sé calcular</span>
 </div>
 
@@ -189,56 +189,50 @@ Seleccioná una opción:
 
 <br>
 
-<input type="radio"> Techo
+<input type="radio" name="cubrir" checked> Techo
 
 <div class="two-cols">
-
 <div>
 <label>LARGO</label>
-<input type="text">
+<input id="largo" type="text">
 </div>
 
 <div>
 <label>ANCHO</label>
-<input type="text">
+<input id="ancho" type="text">
 </div>
-
 </div>
 
 <br>
 
-<input type="radio"> Ventana
+<input type="radio" name="cubrir"> Ventana
 
 <div class="two-cols">
-
 <div>
 <label>ALTO</label>
-<input type="text">
+<input id="altoV" type="text">
 </div>
 
 <div>
 <label>ANCHO</label>
-<input type="text">
+<input id="anchoV" type="text">
 </div>
-
 </div>
 
 <br>
 
-<input type="radio"> Puerta
+<input type="radio" name="cubrir"> Puerta
 
 <div class="two-cols">
-
 <div>
 <label>ALTO</label>
-<input type="text">
+<input id="altoP" type="text">
 </div>
 
 <div>
 <label>ANCHO</label>
-<input type="text">
+<input id="anchoP" type="text">
 </div>
-
 </div>
 
 </div>
@@ -246,24 +240,68 @@ Seleccioná una opción:
 <div class="option">
 
 <div class="option-head">
-<input type="radio">
+<input type="radio" name="tipo" id="infoRadio">
 <span>Quiero otro tipo de información</span>
 </div>
 
-<textarea placeholder="Escribí qué necesitás consultar"></textarea>
+<textarea id="info" placeholder="Escribí qué necesitás consultar"></textarea>
 
 </div>
 
 <label>Comentarios adicionales</label>
 
-<textarea placeholder="Ej: necesito colocarlo en exterior"></textarea>
+<textarea id="comentario"
+placeholder="Ej: necesito colocarlo en exterior">
+</textarea>
 
-<button class="send">
+<button class="send"
+onclick="enviar()">
+
 ENVIAR CONSULTA
+
 </button>
 
 </section>
 </main>
+
+<script>
+
+function enviar(){
+
+let mensaje="MOLDURA: TF-01%0A";
+mensaje+="MEDIDA:15x15x100 cm%0A%0A";
+
+if(document.getElementById("metrosRadio").checked){
+
+mensaje+="TIPO:Sé cuántos metros necesito%0A";
+mensaje+="METROS:"+document.getElementById("metros").value+"%0A";
+
+}
+
+if(document.getElementById("nocRadio").checked){
+
+mensaje+="TIPO:No sé calcular%0A";
+
+mensaje+="LARGO:"+document.getElementById("largo").value+"%0A";
+
+mensaje+="ANCHO:"+document.getElementById("ancho").value+"%0A";
+
+}
+
+if(document.getElementById("infoRadio").checked){
+
+mensaje+="CONSULTA:"+document.getElementById("info").value+"%0A";
+
+}
+
+mensaje+="COMENTARIO:"+document.getElementById("comentario").value;
+
+window.location.href=
+"https://wa.me/5491132181527?text="+mensaje;
+
+}
+
+</script>
 
 </body>
 </html>
