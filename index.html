@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telgo Factory</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #061827;
+    }
+
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      background-image: url("portada.png");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .botones {
+      position: absolute;
+      left: 52px;
+      top: 520px;
+      width: 410px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 5;
+    }
+
+    .btn, .dropbtn {
+      width: 100%;
+      min-height: 64px;
+      border-radius: 12px;
+      border: none;
+      background: #0066d9;
+      color: white;
+      font-size: 23px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    }
+
+    .btn-secundario {
+      background: rgba(12, 31, 50, 0.92);
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    .dropdown-content a {
+      background: rgba(255, 255, 255, 0.96);
+      color: #062033;
+      padding: 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .sub-opcion {
+      font-size: 16px !important;
+      background: rgba(225, 238, 250, 0.96) !important;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      background: #25D366;
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 20;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        background-position: center;
+      }
+
+      .botones {
+        left: 24px;
+        right: 24px;
+        top: auto;
+        bottom: 35px;
+        width: auto;
+      }
+
+      .btn, .dropbtn {
+        min-height: 56px;
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="hero">
+
+    <section class="botones">
+
+      <div class="dropdown">
+        <button class="dropbtn">Productos</button>
+
+        <div class="dropdown-content">
+          <a href="bolsas.html">Bolsas</a>
+          <a href="placas-100x100.html" class="sub-opcion">Placas lisas 100 x 100</a>
+          <a href="placas-a-medida.html" class="sub-opcion">Placas lisas a medida</a>
+          <a href="molduras.html">Molduras</a>
+        </div>
+      </div>
+
+      <a class="btn btn-secundario" href="reciclado.html">Reciclado EPS</a>
+
+      <a class="btn btn-secundario" href="https://wa.me/541132181527" target="_blank">Contacto</a>
+
+    </section>
+
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/541132181527" target="_blank">☎</a>
+
+</body>
+</html>
