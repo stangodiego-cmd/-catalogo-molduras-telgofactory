@@ -1,194 +1,464 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bolsas de Telgopor Molido - Telgo Factory</title>
 
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      background:#061827;
-      color:#061827;
-    }
+<title>Bolsas de Telgopor Molido - TELGO FACTORY</title>
 
-    .pagina{
-      width:100%;
-      min-height:100vh;
-      padding:30px 16px 60px;
-    }
+<style>
 
-    .volver{
-      display:inline-block;
-      margin:0 0 22px 10px;
-      background:#0b2238;
-      color:white;
-      padding:12px 18px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:bold;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .flyer{
-      display:block;
-      width:100%;
-      max-width:1200px;
-      margin:0 auto 28px;
-      border-radius:18px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.45);
-    }
+body{
 
-    .formulario{
-      width:100%;
-      max-width:520px;
-      margin:0 auto;
-      background:white;
-      border-radius:18px;
-      padding:22px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.45);
-    }
+background:#061827;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
 
-    h1{
-      text-align:center;
-      font-size:26px;
-      margin-bottom:18px;
-      color:#062033;
-    }
+}
 
-    label{
-      display:block;
-      font-weight:bold;
-      margin-top:14px;
-      margin-bottom:6px;
-      font-size:15px;
-    }
+.pagina{
 
-    input, textarea{
-      width:100%;
-      padding:13px;
-      border:1px solid #b8c7d9;
-      border-radius:9px;
-      font-size:16px;
-      font-family:Arial, Helvetica, sans-serif;
-    }
+width:100%;
+min-height:100vh;
 
-    textarea{
-      min-height:90px;
-      resize:vertical;
-    }
+padding:30px 20px 60px;
 
-    .ayuda{
-      font-size:13px;
-      color:#46596b;
-      margin-top:4px;
-      line-height:1.35;
-    }
+display:flex;
+flex-direction:column;
+align-items:center;
 
-    .separador{
-      margin:22px 0 8px;
-      padding-top:18px;
-      border-top:1px solid #d8e1ea;
-      font-weight:bold;
-      color:#062033;
-    }
+}
 
-    .boton{
-      width:100%;
-      margin-top:22px;
-      padding:17px;
-      border:none;
-      border-radius:12px;
-      background:#159447;
-      color:white;
-      font-size:19px;
-      font-weight:bold;
-      cursor:pointer;
-    }
-  </style>
+.volver{
+
+align-self:flex-start;
+
+background:#0b2238;
+color:white;
+
+padding:12px 18px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+margin-bottom:25px;
+
+}
+
+.flyer{
+
+width:100%;
+max-width:1200px;
+
+border-radius:18px;
+
+box-shadow:0 14px 30px rgba(0,0,0,0.45);
+
+}
+
+.boton-cotizar{
+
+margin-top:28px;
+
+width:100%;
+max-width:420px;
+
+height:78px;
+
+border:none;
+
+border-radius:16px;
+
+background:#159447;
+
+color:white;
+
+font-size:24px;
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:0 10px 24px rgba(0,0,0,0.35);
+
+}
+
+.formulario{
+
+display:none;
+
+width:100%;
+max-width:560px;
+
+background:white;
+
+color:#062033;
+
+border-radius:20px;
+
+padding:28px;
+
+margin-top:35px;
+
+box-shadow:0 14px 32px rgba(0,0,0,0.45);
+
+}
+
+.formulario.activo{
+
+display:block;
+
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+
+font-size:30px;
+
+}
+
+label{
+
+display:block;
+
+margin-top:16px;
+margin-bottom:6px;
+
+font-weight:bold;
+
+font-size:15px;
+
+}
+
+input,
+textarea{
+
+width:100%;
+
+padding:14px;
+
+border:1px solid #c7d2df;
+
+border-radius:10px;
+
+font-size:16px;
+
+font-family:Arial, Helvetica, sans-serif;
+
+}
+
+textarea{
+
+min-height:100px;
+
+resize:vertical;
+
+}
+
+.texto-ayuda{
+
+font-size:13px;
+
+color:#56697d;
+
+margin-top:4px;
+
+line-height:1.4;
+
+}
+
+.separador{
+
+margin-top:26px;
+
+padding-top:22px;
+
+border-top:1px solid #d7e0ea;
+
+font-weight:bold;
+
+font-size:17px;
+
+}
+
+.enviar{
+
+width:100%;
+
+margin-top:28px;
+
+height:72px;
+
+border:none;
+
+border-radius:14px;
+
+background:#159447;
+
+color:white;
+
+font-size:22px;
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+@media(max-width:700px){
+
+.pagina{
+
+padding:16px 14px 50px;
+
+}
+
+.boton-cotizar{
+
+font-size:20px;
+
+height:68px;
+
+}
+
+.formulario{
+
+padding:20px;
+
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <main class="pagina">
+<div class="pagina">
 
-    <a class="volver" href="index.html">← Volver</a>
+<a class="volver" href="index.html">
+← Volver
+</a>
 
-    <img class="flyer" src="flayer de bolsas.png" alt="Bolsas de telgopor molido Telgo Factory">
+<img class="flyer" src="flayer de bolsas.png">
 
-    <section class="formulario">
-      <h1>Bolsas de 110 litros</h1>
+<button class="boton-cotizar" onclick="mostrarFormulario()">
+SOLICITAR COTIZACIÓN
+</button>
 
-      <label for="cantidad">Cantidad de bolsas</label>
-      <input id="cantidad" type="text" placeholder="Ej: 40 bolsas">
+<div class="formulario" id="formulario">
 
-      <div class="separador">Si no sabés la cantidad, completá las medidas a cubrir</div>
+<h1>Bolsas de 110 litros</h1>
 
-      <label for="largo">Largo</label>
-      <input id="largo" type="text" placeholder="Ej: 6">
-      <div class="ayuda">Medida en metros.</div>
+<label>
+Cantidad de bolsas
+</label>
 
-      <label for="ancho">Ancho</label>
-      <input id="ancho" type="text" placeholder="Ej: 4">
-      <div class="ayuda">Medida en metros.</div>
+<input
+type="text"
+id="cantidad"
+placeholder="Ej: 40 bolsas"
+>
 
-      <label for="altura">Altura / espesor</label>
-      <input id="altura" type="text" placeholder="Ej: 10">
-      <div class="ayuda">Medida en centímetros.</div>
+<div class="separador">
+Si no sabés la cantidad, completá las medidas a cubrir
+</div>
 
-      <label for="observaciones">Observaciones</label>
-      <textarea id="observaciones" placeholder="Si el trabajo tiene caída o necesitás aclarar algo, indicalo acá."></textarea>
-      <div class="ayuda">También podés usar este campo para cualquier duda adicional.</div>
+<label>
+Largo
+</label>
 
-      <div class="separador">Si querés cotizar con envío, completá estos datos</div>
+<input
+type="text"
+id="largo"
+placeholder="Ej: 6"
+>
 
-      <label for="calle">Calle</label>
-      <input id="calle" type="text" placeholder="Ej: Av. San Martín 1234">
+<div class="texto-ayuda">
+La medida es en metros.
+</div>
 
-      <label for="entre">Entre calles</label>
-      <input id="entre" type="text" placeholder="Ej: entre Mitre y Belgrano">
+<label>
+Ancho
+</label>
 
-      <label for="localidad">Localidad</label>
-      <input id="localidad" type="text" placeholder="Ej: Lanús">
+<input
+type="text"
+id="ancho"
+placeholder="Ej: 4"
+>
 
-      <button class="boton" onclick="enviarWhatsApp()">SOLICITAR COTIZACIÓN</button>
-    </section>
+<div class="texto-ayuda">
+La medida es en metros.
+</div>
 
-  </main>
+<label>
+Altura / espesor
+</label>
 
-  <script>
-    function enviarWhatsApp(){
-      const cantidad = document.getElementById("cantidad").value;
-      const largo = document.getElementById("largo").value;
-      const ancho = document.getElementById("ancho").value;
-      const altura = document.getElementById("altura").value;
-      const observaciones = document.getElementById("observaciones").value;
-      const calle = document.getElementById("calle").value;
-      const entre = document.getElementById("entre").value;
-      const localidad = document.getElementById("localidad").value;
+<input
+type="text"
+id="altura"
+placeholder="Ej: 10"
+>
 
-      const mensaje =
+<div class="texto-ayuda">
+La medida es en centímetros.
+</div>
+
+<label>
+Observaciones
+</label>
+
+<textarea
+id="observaciones"
+placeholder="Si el trabajo tiene caída o cualquier otra duda, podés indicarlo acá."
+></textarea>
+
+<div class="texto-ayuda">
+Podés aclarar detalles adicionales o cualquier consulta.
+</div>
+
+<div class="separador">
+Si querés cotizar con envío, completá estos datos
+</div>
+
+<label>
+Calle
+</label>
+
+<input
+type="text"
+id="calle"
+placeholder="Ej: Av. San Martín 1234"
+>
+
+<label>
+Entre calles
+</label>
+
+<input
+type="text"
+id="entre"
+placeholder="Ej: Mitre y Belgrano"
+>
+
+<label>
+Localidad
+</label>
+
+<input
+type="text"
+id="localidad"
+placeholder="Ej: Lanús"
+>
+
+<button class="enviar" onclick="enviarWhatsApp()">
+SOLICITAR COTIZACIÓN
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function mostrarFormulario(){
+
+document
+.getElementById("formulario")
+.classList
+.add("activo");
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+});
+
+}
+
+function enviarWhatsApp(){
+
+const cantidad =
+document.getElementById("cantidad").value;
+
+const largo =
+document.getElementById("largo").value;
+
+const ancho =
+document.getElementById("ancho").value;
+
+const altura =
+document.getElementById("altura").value;
+
+const observaciones =
+document.getElementById("observaciones").value;
+
+const calle =
+document.getElementById("calle").value;
+
+const entre =
+document.getElementById("entre").value;
+
+const localidad =
+document.getElementById("localidad").value;
+
+const mensaje =
+
 `Hola, quiero solicitar cotización de bolsas de telgopor molido de 110 litros.
 
-Cantidad de bolsas: ${cantidad}
+Cantidad de bolsas:
+${cantidad}
 
 Si no sé la cantidad, medidas a cubrir:
-Largo: ${largo} m
-Ancho: ${ancho} m
-Altura / espesor: ${altura} cm
 
-Observaciones: ${observaciones}
+Largo:
+${largo} metros
+
+Ancho:
+${ancho} metros
+
+Altura / espesor:
+${altura} cm
+
+Observaciones:
+${observaciones}
 
 Datos para envío:
-Calle: ${calle}
-Entre calles: ${entre}
-Localidad: ${localidad}`;
 
-      const url = "https://wa.me/541132181527?text=" + encodeURIComponent(mensaje);
-      window.open(url, "_blank");
-    }
-  </script>
+Calle:
+${calle}
+
+Entre calles:
+${entre}
+
+Localidad:
+${localidad}`;
+
+const url =
+"https://wa.me/541132181527?text=" +
+encodeURIComponent(mensaje);
+
+window.open(url, "_blank");
+
+}
+
+</script>
 
 </body>
 </html>
