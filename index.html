@@ -6,226 +6,224 @@
 <title>TELGO FACTORY</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#061827;
-  color:white;
+background:#061827;
+font-family:Arial, Helvetica, sans-serif;
+overflow-x:hidden;
 }
 
-.hero{
-  min-height:100vh;
-  background-image:url("fondo azul web.png");
-  background-size:cover;
-  background-position:center;
-  padding:42px;
-  display:grid;
-  grid-template-columns:40% 60%;
-  gap:28px;
-  align-items:center;
+.portada{
+position:relative;
+width:100%;
+max-width:1920px;
+margin:auto;
 }
 
-.izquierda{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+.portada img{
+width:100%;
+display:block;
 }
 
-.logo-grande{
-  width:62%;
-  max-width:390px;
-  margin-bottom:28px;
+.area{
+position:absolute;
+display:block;
+border-radius:18px;
 }
 
-.bloque-texto{
-  width:100%;
-  max-width:660px;
-  margin-bottom:30px;
+.bolsas{
+top:6%;
+left:41%;
+width:29%;
+height:41%;
+}
+
+.molduras{
+top:6%;
+left:71%;
+width:27%;
+height:41%;
+}
+
+.placas{
+top:48%;
+left:41%;
+width:29%;
+height:43%;
+}
+
+.reciclado{
+top:48%;
+left:71%;
+width:27%;
+height:43%;
 }
 
 .menu{
-  width:70%;
-  max-width:430px;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
+position:absolute;
+left:23%;
+top:68%;
+transform:translateX(-50%);
+width:22%;
+display:flex;
+flex-direction:column;
+gap:12px;
 }
 
 .boton{
-  width:100%;
-  height:62px;
-  border:none;
-  border-radius:12px;
-  background:rgba(8,26,43,0.95);
-  color:white;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
-  text-decoration:none;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 8px 20px rgba(0,0,0,0.35);
+background:rgba(5,20,35,0.96);
+color:white;
+border:none;
+border-radius:12px;
+height:58px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+width:100%;
 }
 
 .productos{
-  position:relative;
+position:relative;
 }
 
 .submenu{
-  display:none;
-  flex-direction:column;
-  gap:8px;
-  margin-top:8px;
+display:none;
+flex-direction:column;
+gap:8px;
+margin-bottom:8px;
 }
 
 .productos:hover .submenu{
-  display:flex;
+display:flex;
 }
 
 .submenu a{
-  background:white;
-  color:#062033;
-  padding:14px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  text-align:center;
+text-decoration:none;
 }
 
-.derecha{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.card{
-  display:block;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 24px rgba(0,0,0,0.38);
-}
-
-.card img{
-  width:100%;
-  display:block;
-}
-
-.logo-chico{
-  position:fixed;
-  left:28px;
-  bottom:24px;
-  width:72px;
-  z-index:20;
+.submenu button{
+width:100%;
+height:54px;
+border:none;
+border-radius:10px;
+background:white;
+color:#062033;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .whatsapp{
-  position:fixed;
-  right:24px;
-  bottom:24px;
-  width:68px;
-  height:68px;
-  border-radius:50%;
-  background:#25D366;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:36px;
-  font-weight:bold;
-  text-decoration:none;
-  z-index:30;
-  box-shadow:0 8px 22px rgba(0,0,0,0.42);
+position:fixed;
+right:20px;
+bottom:20px;
+width:66px;
+height:66px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+color:white;
+text-decoration:none;
+z-index:1000;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
-
-a{text-decoration:none}
 
 @media(max-width:900px){
-  .hero{
-    grid-template-columns:1fr;
-    padding:22px;
-  }
 
-  .logo-grande{
-    width:72%;
-  }
-
-  .bloque-texto{
-    width:100%;
-  }
-
-  .menu{
-    width:100%;
-  }
-
-  .derecha{
-    grid-template-columns:1fr;
-  }
-
-  .logo-chico{
-    width:54px;
-  }
+.menu{
+left:50%;
+top:auto;
+bottom:30px;
+transform:translateX(-50%);
+width:84%;
 }
+
+.boton{
+height:54px;
+font-size:16px;
+}
+
+.submenu button{
+font-size:15px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<div class="portada">
 
-  <div class="izquierda">
+<img src="portada.png" alt="TELGO FACTORY">
 
-    <img class="logo-grande" src="logo grande web.jpeg" alt="Logo TELGO FACTORY">
+<a class="area bolsas" href="bolsas.html"></a>
 
-    <img class="bloque-texto" src="bloque de texto web.png" alt="TELGO FACTORY Especialistas en productos EPS">
+<a class="area molduras" href="molduras.html"></a>
 
-    <div class="menu">
+<a class="area placas" href="placas-100x100.html"></a>
 
-      <div class="productos">
-        <button class="boton">PRODUCTOS</button>
+<a class="area reciclado" href="reciclado.html"></a>
 
-        <div class="submenu">
-          <a href="bolsas.html">BOLSAS</a>
-          <a href="placas-100x100.html">PLACAS LISAS 100 x 100</a>
-          <a href="placas-a-medida.html">PLACAS LISAS A MEDIDA</a>
-          <a href="molduras.html">MOLDURAS</a>
-        </div>
-      </div>
+<div class="menu">
 
-      <a class="boton" href="reciclado.html">RECICLADO EPS</a>
+<div class="productos">
 
-      <a class="boton" href="https://wa.me/541132181527" target="_blank">CONTACTO</a>
+<div class="submenu">
 
-    </div>
+<a href="bolsas.html">
+<button>BOLSAS</button>
+</a>
 
-  </div>
+<a href="placas-100x100.html">
+<button>PLACAS LISAS 100 x 100</button>
+</a>
 
-  <div class="derecha">
+<a href="placas-a-medida.html">
+<button>PLACAS A MEDIDA</button>
+</a>
 
-    <a class="card" href="bolsas.html">
-      <img src="bolsa web.png" alt="Bolsas">
-    </a>
+<a href="molduras.html">
+<button>MOLDURAS</button>
+</a>
 
-    <a class="card" href="molduras.html">
-      <img src="molder web.png" alt="Molduras">
-    </a>
+</div>
 
-    <a class="card" href="placas-100x100.html">
-      <img src="placa web.png" alt="Placas">
-    </a>
+<button class="boton">
+PRODUCTOS
+</button>
 
-    <a class="card" href="reciclado.html">
-      <img src="reciclar web.png" alt="Reciclado EPS">
-    </a>
+</div>
 
-  </div>
+<a href="reciclado.html">
+<button class="boton">
+RECICLADO EPS
+</button>
+</a>
 
-</section>
+<a href="https://wa.me/541132181527" target="_blank">
+<button class="boton">
+CONTACTO
+</button>
+</a>
 
-<img class="logo-chico" src="logo chico web.jpeg" alt="TF">
+</div>
 
-<a class="whatsapp" href="https://wa.me/541132181527" target="_blank">☎</a>
+</div>
+
+<a class="whatsapp" href="https://wa.me/541132181527" target="_blank">
+☎
+</a>
 
 </body>
 </html>
