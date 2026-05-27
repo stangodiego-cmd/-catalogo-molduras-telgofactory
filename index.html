@@ -4,212 +4,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>TELGO FACTORY</title>
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body{
+    body {
       font-family: Arial, Helvetica, sans-serif;
-      background:#061827;
-      overflow-x:hidden;
+      background: #061827;
+      overflow-x: hidden;
     }
 
-    .portada{
-
-      width:100%;
-      height:100vh;
-
-      background-image:url("portada.png");
-      background-size:cover;
-      background-position:center;
-
-      position:relative;
-
+    .portada {
+      width: 100%;
+      height: 100vh;
+      background-image: url("portada.png");
+      background-size: cover;
+      background-position: center;
+      position: relative;
     }
 
-    .menu{
-
-      position:absolute;
-
-      left:55px;
-      top:620px;
-
-      width:420px;
-
-      display:flex;
-      flex-direction:column;
-
-      gap:18px;
-
-      z-index:10;
-
+    .menu {
+      position: absolute;
+      left: 52px;
+      bottom: 120px;
+      width: 430px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 10;
     }
 
-    .boton{
-
-      width:100%;
-      height:78px;
-
-      border:none;
-      border-radius:16px;
-
-      background:rgba(8,26,43,0.92);
-
-      color:white;
-
-      font-size:28px;
-      font-weight:bold;
-
-      cursor:pointer;
-
-      transition:0.2s;
-
-      box-shadow:0 10px 25px rgba(0,0,0,0.35);
-
+    .boton {
+      width: 100%;
+      height: 78px;
+      border: none;
+      border-radius: 16px;
+      background: rgba(8, 26, 43, 0.96);
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
     }
 
-    .boton:hover{
-
-      transform:scale(1.02);
-
+    .productos {
+      position: relative;
     }
 
-    .productos{
-
-      position:relative;
-
+    .submenu {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
-    .submenu{
-
-      display:none;
-
-      flex-direction:column;
-
-      gap:10px;
-
-      margin-top:10px;
-
+    .productos:hover .submenu {
+      display: flex;
     }
 
-    .productos:hover .submenu{
-
-      display:flex;
-
+    .submenu a {
+      text-decoration: none;
     }
 
-    .submenu a{
-
-      text-decoration:none;
-
+    .submenu button {
+      width: 100%;
+      min-height: 64px;
+      border: none;
+      border-radius: 14px;
+      background: white;
+      color: #062033;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
     }
 
-    .submenu button{
-
-      width:100%;
-      min-height:68px;
-
-      border:none;
-      border-radius:14px;
-
-      background:white;
-
-      color:#062033;
-
-      font-size:21px;
-      font-weight:bold;
-
-      cursor:pointer;
-
-      padding:12px;
-
-      box-shadow:0 8px 18px rgba(0,0,0,0.25);
-
+    a {
+      text-decoration: none;
     }
 
-    .submenu button:hover{
-
-      background:#dfefff;
-
+    .whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: bold;
+      z-index: 1000;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
     }
 
-    .whatsapp{
-
-      position:fixed;
-
-      right:22px;
-      bottom:22px;
-
-      width:78px;
-      height:78px;
-
-      border-radius:50%;
-
-      background:#25D366;
-
-      color:white;
-
-      text-decoration:none;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      font-size:42px;
-      font-weight:bold;
-
-      z-index:1000;
-
-      box-shadow:0 10px 24px rgba(0,0,0,0.4);
-
-    }
-
-    @media(max-width:900px){
-
-      .portada{
-
-        height:auto;
-        min-height:100vh;
-
-        background-position:center;
-
+    @media (max-width: 900px) {
+      .portada {
+        min-height: 100vh;
+        background-position: center;
       }
 
-      .menu{
-
-        position:relative;
-
-        left:auto;
-        top:auto;
-
-        width:90%;
-
-        margin:auto;
-
-        padding-top:720px;
-        padding-bottom:40px;
-
+      .menu {
+        left: 22px;
+        right: 22px;
+        bottom: 90px;
+        width: auto;
       }
 
-      .boton{
-
-        height:70px;
-
-        font-size:24px;
-
+      .boton {
+        height: 64px;
+        font-size: 22px;
       }
 
+      .submenu button {
+        min-height: 58px;
+        font-size: 18px;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
@@ -220,55 +142,41 @@
 
       <div class="productos">
 
-        <button class="boton">
-          PRODUCTOS
-        </button>
-
         <div class="submenu">
-
           <a href="bolsas.html">
             <button>BOLSAS</button>
           </a>
 
           <a href="placas-100x100.html">
-            <button>PLACAS LISAS 100x100</button>
+            <button>PLACAS LISAS 100 x 100</button>
           </a>
 
           <a href="placas-a-medida.html">
-            <button>PLACAS A MEDIDA</button>
+            <button>PLACAS LISAS A MEDIDA</button>
           </a>
 
           <a href="molduras.html">
             <button>MOLDURAS</button>
           </a>
-
         </div>
+
+        <button class="boton">PRODUCTOS</button>
 
       </div>
 
       <a href="reciclado.html">
-
-        <button class="boton">
-          RECICLADO EPS
-        </button>
-
+        <button class="boton">RECICLADO EPS</button>
       </a>
 
       <a href="https://wa.me/541132181527" target="_blank">
-
-        <button class="boton">
-          CONTACTO
-        </button>
-
+        <button class="boton">CONTACTO</button>
       </a>
 
     </div>
 
   </section>
 
-  <a class="whatsapp" href="https://wa.me/541132181527" target="_blank">
-    ☎
-  </a>
+  <a class="whatsapp" href="https://wa.me/541132181527" target="_blank">☎</a>
 
 </body>
 
