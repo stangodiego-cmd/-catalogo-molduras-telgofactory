@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Formulario Bolsas - TELGO FACTORY</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#061827;
+font-family:Arial, Helvetica, sans-serif;
+
+padding:30px 16px 60px;
+
+display:flex;
+justify-content:center;
+
+}
+
+.formulario{
+
+width:100%;
+max-width:560px;
+
+background:white;
+
+border-radius:20px;
+
+padding:28px;
+
+box-shadow:0 14px 30px rgba(0,0,0,0.45);
+
+}
+
+h1{
+
+text-align:center;
+
+font-size:32px;
+
+color:#062033;
+
+margin-bottom:24px;
+
+}
+
+label{
+
+display:block;
+
+margin-top:16px;
+margin-bottom:6px;
+
+font-size:15px;
+font-weight:bold;
+
+color:#062033;
+
+}
+
+input,
+textarea{
+
+width:100%;
+
+padding:14px;
+
+border:1px solid #c7d2df;
+
+border-radius:10px;
+
+font-size:16px;
+
+font-family:Arial, Helvetica, sans-serif;
+
+}
+
+textarea{
+
+min-height:110px;
+
+resize:vertical;
+
+}
+
+.texto-ayuda{
+
+font-size:13px;
+
+color:#5a6a7b;
+
+margin-top:4px;
+
+line-height:1.4;
+
+}
+
+.separador{
+
+margin-top:28px;
+
+padding-top:22px;
+
+border-top:1px solid #d9e1ea;
+
+font-size:18px;
+font-weight:bold;
+
+color:#062033;
+
+}
+
+.boton{
+
+width:100%;
+
+height:74px;
+
+margin-top:30px;
+
+border:none;
+
+border-radius:14px;
+
+background:#159447;
+
+color:white;
+
+font-size:22px;
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+@media(max-width:700px){
+
+body{
+
+padding:16px 12px 40px;
+
+}
+
+.formulario{
+
+padding:22px;
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+.boton{
+
+height:66px;
+
+font-size:20px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="formulario">
+
+<h1>Bolsas de 110 litros</h1>
+
+<label>
+Cantidad de bolsas
+</label>
+
+<input
+type="text"
+id="cantidad"
+placeholder="Ej: 40 bolsas"
+>
+
+<div class="separador">
+Si no sabés la cantidad, completá las medidas a cubrir
+</div>
+
+<label>
+Largo
+</label>
+
+<input
+type="text"
+id="largo"
+placeholder="Ej: 6"
+>
+
+<div class="texto-ayuda">
+La medida es en metros.
+</div>
+
+<label>
+Ancho
+</label>
+
+<input
+type="text"
+id="ancho"
+placeholder="Ej: 4"
+>
+
+<div class="texto-ayuda">
+La medida es en metros.
+</div>
+
+<label>
+Altura / espesor
+</label>
+
+<input
+type="text"
+id="altura"
+placeholder="Ej: 10"
+>
+
+<div class="texto-ayuda">
+La medida es en centímetros.
+</div>
+
+<label>
+Observaciones
+</label>
+
+<textarea
+id="observaciones"
+placeholder="Si el trabajo tiene caída o cualquier otra duda, podés indicarlo acá."
+></textarea>
+
+<div class="texto-ayuda">
+Podés aclarar detalles adicionales o cualquier consulta.
+</div>
+
+<div class="separador">
+Si querés cotizar con envío, completá estos datos
+</div>
+
+<label>
+Calle
+</label>
+
+<input
+type="text"
+id="calle"
+placeholder="Ej: Av. San Martín 1234"
+>
+
+<label>
+Entre calles
+</label>
+
+<input
+type="text"
+id="entre"
+placeholder="Ej: Mitre y Belgrano"
+>
+
+<label>
+Localidad
+</label>
+
+<input
+type="text"
+id="localidad"
+placeholder="Ej: Lanús"
+>
+
+<button class="boton" onclick="enviarWhatsApp()">
+SOLICITAR COTIZACIÓN
+</button>
+
+</div>
+
+<script>
+
+function enviarWhatsApp(){
+
+const cantidad =
+document.getElementById("cantidad").value;
+
+const largo =
+document.getElementById("largo").value;
+
+const ancho =
+document.getElementById("ancho").value;
+
+const altura =
+document.getElementById("altura").value;
+
+const observaciones =
+document.getElementById("observaciones").value;
+
+const calle =
+document.getElementById("calle").value;
+
+const entre =
+document.getElementById("entre").value;
+
+const localidad =
+document.getElementById("localidad").value;
+
+const mensaje =
+
+`Hola, quiero solicitar cotización de bolsas de telgopor molido de 110 litros.
+
+Cantidad de bolsas:
+${cantidad}
+
+Si no sé la cantidad, medidas a cubrir:
+
+Largo:
+${largo} metros
+
+Ancho:
+${ancho} metros
+
+Altura / espesor:
+${altura} cm
+
+Observaciones:
+${observaciones}
+
+Datos para envío:
+
+Calle:
+${calle}
+
+Entre calles:
+${entre}
+
+Localidad:
+${localidad}`;
+
+const url =
+"https://wa.me/541132181527?text=" +
+encodeURIComponent(mensaje);
+
+window.open(url, "_blank");
+
+}
+
+</script>
+
+</body>
+</html>
