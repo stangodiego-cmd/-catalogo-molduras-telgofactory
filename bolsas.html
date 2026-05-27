@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolsas de Telgopor Molido - Telgo Factory</title>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#061827;
+      color:#061827;
+    }
+
+    .pagina{
+      width:100%;
+      min-height:100vh;
+      padding:30px 16px 60px;
+    }
+
+    .volver{
+      display:inline-block;
+      margin:0 0 22px 10px;
+      background:#0b2238;
+      color:white;
+      padding:12px 18px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .flyer{
+      display:block;
+      width:100%;
+      max-width:1200px;
+      margin:0 auto 28px;
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.45);
+    }
+
+    .formulario{
+      width:100%;
+      max-width:520px;
+      margin:0 auto;
+      background:white;
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.45);
+    }
+
+    h1{
+      text-align:center;
+      font-size:26px;
+      margin-bottom:18px;
+      color:#062033;
+    }
+
+    label{
+      display:block;
+      font-weight:bold;
+      margin-top:14px;
+      margin-bottom:6px;
+      font-size:15px;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:13px;
+      border:1px solid #b8c7d9;
+      border-radius:9px;
+      font-size:16px;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    textarea{
+      min-height:90px;
+      resize:vertical;
+    }
+
+    .ayuda{
+      font-size:13px;
+      color:#46596b;
+      margin-top:4px;
+      line-height:1.35;
+    }
+
+    .separador{
+      margin:22px 0 8px;
+      padding-top:18px;
+      border-top:1px solid #d8e1ea;
+      font-weight:bold;
+      color:#062033;
+    }
+
+    .boton{
+      width:100%;
+      margin-top:22px;
+      padding:17px;
+      border:none;
+      border-radius:12px;
+      background:#159447;
+      color:white;
+      font-size:19px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="pagina">
+
+    <a class="volver" href="index.html">← Volver</a>
+
+    <img class="flyer" src="flayer de bolsas.png" alt="Bolsas de telgopor molido Telgo Factory">
+
+    <section class="formulario">
+      <h1>Bolsas de 110 litros</h1>
+
+      <label for="cantidad">Cantidad de bolsas</label>
+      <input id="cantidad" type="text" placeholder="Ej: 40 bolsas">
+
+      <div class="separador">Si no sabés la cantidad, completá las medidas a cubrir</div>
+
+      <label for="largo">Largo</label>
+      <input id="largo" type="text" placeholder="Ej: 6">
+      <div class="ayuda">Medida en metros.</div>
+
+      <label for="ancho">Ancho</label>
+      <input id="ancho" type="text" placeholder="Ej: 4">
+      <div class="ayuda">Medida en metros.</div>
+
+      <label for="altura">Altura / espesor</label>
+      <input id="altura" type="text" placeholder="Ej: 10">
+      <div class="ayuda">Medida en centímetros.</div>
+
+      <label for="observaciones">Observaciones</label>
+      <textarea id="observaciones" placeholder="Si el trabajo tiene caída o necesitás aclarar algo, indicalo acá."></textarea>
+      <div class="ayuda">También podés usar este campo para cualquier duda adicional.</div>
+
+      <div class="separador">Si querés cotizar con envío, completá estos datos</div>
+
+      <label for="calle">Calle</label>
+      <input id="calle" type="text" placeholder="Ej: Av. San Martín 1234">
+
+      <label for="entre">Entre calles</label>
+      <input id="entre" type="text" placeholder="Ej: entre Mitre y Belgrano">
+
+      <label for="localidad">Localidad</label>
+      <input id="localidad" type="text" placeholder="Ej: Lanús">
+
+      <button class="boton" onclick="enviarWhatsApp()">SOLICITAR COTIZACIÓN</button>
+    </section>
+
+  </main>
+
+  <script>
+    function enviarWhatsApp(){
+      const cantidad = document.getElementById("cantidad").value;
+      const largo = document.getElementById("largo").value;
+      const ancho = document.getElementById("ancho").value;
+      const altura = document.getElementById("altura").value;
+      const observaciones = document.getElementById("observaciones").value;
+      const calle = document.getElementById("calle").value;
+      const entre = document.getElementById("entre").value;
+      const localidad = document.getElementById("localidad").value;
+
+      const mensaje =
+`Hola, quiero solicitar cotización de bolsas de telgopor molido de 110 litros.
+
+Cantidad de bolsas: ${cantidad}
+
+Si no sé la cantidad, medidas a cubrir:
+Largo: ${largo} m
+Ancho: ${ancho} m
+Altura / espesor: ${altura} cm
+
+Observaciones: ${observaciones}
+
+Datos para envío:
+Calle: ${calle}
+Entre calles: ${entre}
+Localidad: ${localidad}`;
+
+      const url = "https://wa.me/541132181527?text=" + encodeURIComponent(mensaje);
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
