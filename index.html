@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>TELGO FACTORY</title>
 
 <style>
@@ -14,61 +17,70 @@ box-sizing:border-box;
 }
 
 body{
-background:#061827;
+background:#03192b;
 font-family:Arial, Helvetica, sans-serif;
 overflow-x:hidden;
 }
 
-.portada{
-position:relative;
+.desktop{
+display:block;
 width:100%;
-max-width:1920px;
-margin:auto;
 }
 
-.portada img{
+.mobile{
+display:none;
+width:100%;
+}
+
+.desktop img,
+.mobile img{
 width:100%;
 display:block;
+}
+
+.desktop-container{
+position:relative;
+width:100%;
 }
 
 .area{
 position:absolute;
 display:block;
-border-radius:18px;
+border-radius:20px;
 }
 
 .bolsas{
-top:6%;
+top:5%;
 left:41%;
 width:29%;
-height:41%;
+height:42%;
 }
 
 .molduras{
-top:6%;
+top:5%;
 left:71%;
 width:27%;
-height:41%;
+height:42%;
 }
 
 .placas{
-top:48%;
+top:49%;
 left:41%;
 width:29%;
-height:43%;
+height:42%;
 }
 
 .reciclado{
-top:48%;
+top:49%;
 left:71%;
 width:27%;
-height:43%;
+height:42%;
 }
 
 .menu{
 position:absolute;
-left:23%;
-top:68%;
+left:24%;
+top:67%;
 transform:translateX(-50%);
 width:22%;
 display:flex;
@@ -77,7 +89,7 @@ gap:12px;
 }
 
 .boton{
-background:rgba(5,20,35,0.96);
+background:#03192be8;
 color:white;
 border:none;
 border-radius:12px;
@@ -113,57 +125,75 @@ height:54px;
 border:none;
 border-radius:10px;
 background:white;
-color:#062033;
+color:#03192b;
 font-size:16px;
 font-weight:bold;
 cursor:pointer;
 }
 
+.mobile-container{
+position:relative;
+width:100%;
+}
+
+.mobile-boton{
+display:block;
+width:82%;
+margin:18px auto;
+height:58px;
+border:none;
+border-radius:14px;
+background:#06233be8;
+color:white;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
 .whatsapp{
 position:fixed;
-right:20px;
-bottom:20px;
-width:66px;
-height:66px;
-border-radius:50%;
+right:18px;
+bottom:18px;
+width:68px;
+height:68px;
 background:#25D366;
+border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:34px;
 color:white;
 text-decoration:none;
-z-index:1000;
-box-shadow:0 8px 20px rgba(0,0,0,0.4);
+z-index:9999;
+box-shadow:0 8px 20px rgba(0,0,0,0.35);
 }
 
 @media(max-width:900px){
 
-.menu{
-left:50%;
-top:auto;
-bottom:30px;
-transform:translateX(-50%);
-width:84%;
+.desktop{
+display:none;
 }
 
-.boton{
-height:54px;
-font-size:16px;
-}
-
-.submenu button{
-font-size:15px;
+.mobile{
+display:block;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="portada">
+<!-- DESKTOP -->
+
+<div class="desktop">
+
+<div class="desktop-container">
 
 <img src="portada.png" alt="TELGO FACTORY">
 
@@ -215,6 +245,44 @@ RECICLADO EPS
 <button class="boton">
 CONTACTO
 </button>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MOBILE -->
+
+<div class="mobile">
+
+<div class="mobile-container">
+
+<img src="portada celular.png" alt="TELGO FACTORY MOBILE">
+
+<a class="mobile-boton" href="bolsas.html">
+BOLSAS
+</a>
+
+<a class="mobile-boton" href="placas-100x100.html">
+PLACAS LISAS 100 x 100
+</a>
+
+<a class="mobile-boton" href="placas-a-medida.html">
+PLACAS A MEDIDA
+</a>
+
+<a class="mobile-boton" href="molduras.html">
+MOLDURAS
+</a>
+
+<a class="mobile-boton" href="reciclado.html">
+RECICLADO EPS
+</a>
+
+<a class="mobile-boton" href="https://wa.me/541132181527" target="_blank">
+CONTACTO
 </a>
 
 </div>
